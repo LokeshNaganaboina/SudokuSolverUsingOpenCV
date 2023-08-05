@@ -51,6 +51,7 @@ Flask Web Server: Flask acts as a web server. It listens for incoming requests f
 AJAX Handling: AJAX requests handle interactions between the front-end and back-end, enabling real-time updates without full page reloads.
 
 Here is a sample image of the application on how it looks
+![SudokuSolverApp](https://github.com/LokeshYadav-01/SudokuSolverUsingOpenCV/assets/69782328/b1479342-0e81-476f-8357-189fbaebf421)
 
 ##
 
