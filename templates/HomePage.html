@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sudoku Solver</title>
+    <style type="text/css">
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Apply a background color and center the content */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center; /* main axis */
+            align-items: center; /* cross axis */
+            margin : 0;
+            min-height: 100vh;
+
+        }
+
+        
+        #sudokuOpenCvContainer {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 14px 14px 2px 2px rgba(173, 173, 241, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        
+        .sudoku-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px 10px;
+            margin-bottom: 20px;
+        }
+
+        
+        label[for="image-input"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+
+        label[for="image-input"]:hover {
+            background-color: #0056b3;
+        }
+
+        #image-input{
+            display: none;
+        }
+
+        
+        #input-image {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border : 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        #input-image:hover {
+            background-color: #218838;
+        }
+
+        
+        .image-display {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .image-display h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #input-image-display,
+        #output-image-display {
+            max-width: 100%;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            padding: 10px;
+            background-color: rgb(246, 189, 189);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="sudokuOpenCvContainer">
+        <form class="sudoku-form" action="/solve_sudoku" method="POST" id="image-form" enctype="multipart/form-data">
+            <h1>Sudoku Solver</h1>
+            <label for="image-input">Upload an image</label>
+            <div><input type="file" id="image-input" accept="image/*"></div>
+            <div><button type="submit" id="input-image">Solve</button></div>
+        </form>
+
+        <div class="image-display">
+            <div>
+                <h2>Given Image:</h2>
+                <img id="input-image-display" src="" alt="No Image Uploaded Yet">
+            </div>
+            <div>
+                <h2>Solved Image:</h2>
+                <img id="output-image-display" src="" alt="No Image Uploaded Yet">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/static/sudoku.js"></script>
+</body>
+
+</html>
