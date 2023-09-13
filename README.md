@@ -20,7 +20,7 @@ venv\Scripts\activate #For Windows users
 Install the necessary packages to run this project from requirements.txt
 
 ```bash
-pip install requirement.txt
+pip install requirements.txt
 ```
 To run the app, run the following command
 ```bash
