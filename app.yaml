@@ -1,0 +1,21 @@
+runtime: python39
+instance_class: F1
+automatic_scaling:
+  target_cpu_utilization: 65
+  min_instances: 1
+  max_instances: 5
+entrypoint: python app.py
+
+# Static files configuration
+handlers:
+- url: /static/images/(.*)
+  static_files: static/images/\1
+  upload: static/images/(.*)
+
+- url: /static/(.*\.js)
+  static_files: static/\1
+  upload: static/.*\.js
+
+- url: /uploads/(.*)
+  static_files: uploads/\1
+  upload: uploads/(.*)
